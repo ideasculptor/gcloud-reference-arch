@@ -17,9 +17,9 @@
 remote_state {
   backend = "gcs"
   config = {
-    bucket  = "ideasculptor_refarch_tf_state"
+    bucket  = "refarch_root_tf_state"
     prefix  = "folders/${path_relative_to_include()}"
-    project = "refarch-root-0000"
+    project = "refarch-root-db74"
     location = "us-west1"
   }
 }
@@ -41,9 +41,9 @@ inputs = merge(
 
   # Additional global inputs to pass to modules called in this directory tree.
   {
-    terraform_state_bucket  = "ideasculptor_refarch_tf_state"
+    terraform_state_bucket  = "refarch_root_tf_state"
     terraform_state_prefix = "folders"
-    organization: 499938684127
-    organization_name: 'ideasculptor.com'
+    organization: "499938684127"
+    organization_name: "ideasculptor.com"
   },
 )

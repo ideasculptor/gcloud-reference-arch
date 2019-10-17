@@ -16,6 +16,12 @@
 
 terraform {
   required_version = ">= 0.12"
+
+#  backend "gcs" {
+#    credentials = "/path/to/service-accounts-xxxxxx-yyyyyyyyyy.json"
+#    bucket  = "tf_state"
+#    prefix  = "folders/Reference Infrastructure/root-folder"
+#  }
 }
 
 provider "google" {
@@ -80,13 +86,16 @@ module "root-project" {
   bucket_project          = var.root_project_id_prefix
   bucket_location         = var.bucket_location
 
-  impersonate_service_account = var.impersonate_service_account
+  credentials_path        = var.credentials
+  # impersonate_service_account = var.impersonate_service_account
 }
 
-/*
 module "folder-iam" {
   source  = "terraform-google-modules/iam/google//modules/folders_iam"
-  folders = [module.root-folder.id]
+
+  # Why is this necessary, module authors?  The resource returns the value,
+  # how about an output to match?
+  folders = [regex("folders/(.+)", module.root-folder.id)[0]]
   folders_num = 1
 
   mode = "additive"
@@ -103,4 +112,3 @@ module "folder-iam" {
     ]
   }
 }
-*/
