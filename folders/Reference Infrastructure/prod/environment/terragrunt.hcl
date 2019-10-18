@@ -15,7 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 terraform {
-  source = "git::git@github.com:ideasculptor/gcloud-templates.git//root-folder?ref=environment"
+  source = "git::git@github.com:ideasculptor/gcloud-templates.git//environment?ref=environment"
 }
 
 include {
@@ -28,14 +28,5 @@ dependencies {
 }
 
 inputs = {
-  root_node = "organizations/499938684127"
-  billing_account_id = "016AA8-2A2B8C-B0B16C"
-  org_id = "499938684127"
-  credentials = "/Users/sgendler/Downloads/service-accounts-256205-46bc86d3a3b1.json"
-
-  admin_members = [
-    "sgendler@ideasculptor.com"
-  ]
-  admin_members_num = 1
 }
 
