@@ -92,6 +92,14 @@ module "root-project" {
   credentials_path        = var.credentials
 }
 
+resource "gsuite_group_member" "admin_group_member" {
+  count = var.sa_group != "" ? var.admin_members_num : 0
+
+  group = var.sa_group
+  email = element(var.admin_members, count.index)
+  role  = "MEMBER"
+}
+
 module "folder-iam" {
   source  = "terraform-google-modules/iam/google//modules/folders_iam"
 

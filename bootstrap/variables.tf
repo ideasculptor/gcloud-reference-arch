@@ -90,3 +90,12 @@ variable "bucket_location" {
   default = "us-west1"
 }
 
+variable "admin_members_num" {
+  default = 0
+}
+
+variable "admin_members" {
+  type = list(string)
+  default = []
+}
+
