@@ -29,6 +29,9 @@ dependencies {
 }
 
 inputs = {
+  gsuite_credentials = "/Users/sgendler/Downloads/service-accounts-256205-46bc86d3a3b1.json"
+  impersonate_gsuite_user = "sgendler@ideasculptor.com"
+
   admin_members = [
     "sgendler@ideasculptor.com"
   ]
