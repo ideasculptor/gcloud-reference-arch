@@ -24,9 +24,14 @@ include {
 
 dependencies {
   paths = [
+    "../../root-folder"
   ]
 }
 
 inputs = {
+  admin_members = [
+    "sgendler@ideasculptor.com"
+  ]
+  admin_members_num = 1
 }
 

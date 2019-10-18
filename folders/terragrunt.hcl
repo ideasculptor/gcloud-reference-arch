@@ -43,7 +43,8 @@ inputs = merge(
   {
     terraform_state_bucket  = "refarch_root_tf_state"
     terraform_state_prefix = "folders"
-    organization: "499938684127"
-    organization_name: "ideasculptor.com"
+    organization = "499938684127"
+    organization_name = "ideasculptor.com"
+    billing_account_id = "016AA8-2A2B8C-B0B16C"
   },
 )
