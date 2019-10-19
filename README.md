@@ -3,11 +3,16 @@ A gcloud reference architecture implementation using Terraform and Terragrunt
 
 What you need to know:
 
-Bootstrap - contains the minimal set of resources necessary to bootstrap an architecture such that terraform and terragrunt can be used to manage it.  It is a subset of the code in the gcloud-templates/root-folder template.  If you uncomment the `backend` block after running it, the state will be uploaded to the remote_state location where the root-template folder can find it, preventing the need to import 30 separate resources after running the bootstrap.
+### Bootstrap
+contains the minimal set of resources necessary to bootstrap an architecture such that terraform and terragrunt can be used to manage it.  It is a subset of the code in the gcloud-templates/root-folder template.  If you uncomment the `backend` block after running it, the state will be uploaded to the remote_state location where the root-template folder can find it, preventing the need to import 30 separate resources after running the bootstrap.
 
-Folders - Is a directory subtree that manages the metadata for environments, service projects, and service accounts.
+### Folders 
+Is a directory subtree that manages the metadata for environments, service projects, and service accounts.
 
-Environments - Is a directory subtree that manages the resources for the environments themselves - networks, compute resources, and managed services would all be managed within this tree.
+### Environments
+Is a directory subtree that manages the resources for the environments themselves - networks, compute resources, and managed services would all be managed within this tree.
+
+---
 
 At the time of writing, the Folders repo is mostly complete for dev.  I am waiting for project quota updates from google before bringing up prod and stage, since I was limited to 5 projects with billing.
 
