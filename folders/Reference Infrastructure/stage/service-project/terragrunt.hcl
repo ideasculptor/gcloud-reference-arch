@@ -24,7 +24,8 @@ include {
 
 dependencies {
   paths = [
-    "../../root-folder"
+    "../../root-folder",
+    "../environment"
   ]
 }
 
