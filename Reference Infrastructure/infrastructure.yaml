@@ -1,0 +1,8 @@
+parent_template: root-folder
+parent_path: Reference Infrastructure
+organization: 499938684127
+organization_name: ideasculptor.com
+billing_account_id: 016AA8-2A2B8C-B0B16C
+admin_members_num: 1
+admin_members:
+  - sgendler@ideasculptor.com
