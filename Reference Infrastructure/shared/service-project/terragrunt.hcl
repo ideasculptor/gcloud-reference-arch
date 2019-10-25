@@ -30,5 +30,6 @@ dependencies {
 }
 
 inputs = {
+  project_short_name = "shared"
 }
 
