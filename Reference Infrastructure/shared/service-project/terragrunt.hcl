@@ -15,7 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 terraform {
-  source = "git::git@github.com:ideasculptor/gcloud-templates.git//service-project/shared?ref=v0.0.3"
+  source = "git::git@github.com:ideasculptor/gcloud-templates.git//service-project/shared?ref=v0.0.4"
 }
 
 include {
@@ -30,5 +30,6 @@ dependencies {
 }
 
 inputs = {
+  project_short_name = "shared"
 }
 
