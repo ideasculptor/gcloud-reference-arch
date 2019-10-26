@@ -15,7 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 terraform {
-  source = "git::git@github.com:ideasculptor/gcloud-templates.git//subnets?ref=subnets"
+  source = "git::git@github.com:ideasculptor/gcloud-templates.git//subnets?ref=v0.0.4"
 }
 
 include {
@@ -30,6 +30,8 @@ dependencies {
 }
 
 inputs = {
+  delete_default_internet_gateway_routes = "true"
+
   subnets          = [
     { 
       subnet_name           = "public-1"
@@ -39,17 +41,14 @@ inputs = {
     },
   ]
 
-  secondary_ranges = {
-    "public-1" = [
-      {
-        range_name = "blah"
-        ip_cidr_range = "192.168.10.0/26"
-      },
-      {
-        range_name = "blah-2"
-        ip_cidr_range = "192.168.10.64/26"
-      },
-    ]
-  }
+  routes = [
+    {
+      name              = "egress-inet"
+      description       = "route through IGW to access internet"
+      destination_range = "0.0.0.0/0"
+      tags              = "egress-inet"
+      next_hop_internet = "true"
+    },
+  ]
 }
 

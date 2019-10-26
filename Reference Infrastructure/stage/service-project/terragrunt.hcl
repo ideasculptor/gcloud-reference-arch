@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-terraform { source = "git::git@github.com:ideasculptor/gcloud-templates.git//service-project/environment?ref=v0.0.3" }
+terraform { source = "git::git@github.com:ideasculptor/gcloud-templates.git//service-project/environment?ref=v0.0.4" }
 
 include {
   path = find_in_parent_folders()
