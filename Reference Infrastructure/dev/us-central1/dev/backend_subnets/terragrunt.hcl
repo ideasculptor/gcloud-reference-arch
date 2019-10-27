@@ -50,8 +50,12 @@ inputs = {
   secondary_ranges = {
     gke = [
       {
-        range_name = "gke-secondary"
-        ip_cidr_range = "192.168.11.0/24"
+        range_name = "services"
+        ip_cidr_range = "192.168.1.0/24"
+      },
+      {
+        range_name = "pods"
+        ip_cidr_range = "192.168.2.0/24"
       },
     ]
   }

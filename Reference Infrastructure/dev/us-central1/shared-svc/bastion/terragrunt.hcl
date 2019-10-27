@@ -15,7 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 terraform {
-  source = "git::git@github.com:ideasculptor/gcloud-templates.git//subnets?ref=v0.0.4"
+  source = "git::git@github.com:ideasculptor/gcloud-templates.git//bastion?ref=master"
 }
 
 include {
@@ -24,37 +24,12 @@ include {
 
 dependencies {
   paths = [
-    "../../../../root-folder",
-    "../../../environment"
+    "../../../environment",
+    "../../dev/public_subnets",
+    "../../../../shared/service-project"
   ]
 }
 
 inputs = {
-  delete_default_internet_gateway_routes = "true"
-
-  subnets          = [
-    { 
-      subnet_name           = "admin"
-      subnet_ip             = "10.0.0.0/24"
-      subnet_private_access = "true"
-      subnet_flow_logs      = "true"
-    },
-    { 
-      subnet_name           = "public"
-      subnet_ip             = "10.10.10.0/24"
-      subnet_private_access = "true"
-      subnet_flow_logs      = "true"
-    },
-  ]
-
-  routes = [
-    {
-      name              = "egress-inet"
-      description       = "route through IGW to access internet"
-      destination_range = "0.0.0.0/0"
-      tags              = "egress-inet"
-      next_hop_internet = "true"
-    },
-  ]
 }
 
