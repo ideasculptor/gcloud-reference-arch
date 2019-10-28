@@ -15,7 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 terraform {
-  source = "git::git@github.com:ideasculptor/gcloud-templates.git//bastion?ref=master"
+  source = "git::git@github.com:ideasculptor/gcloud-templates.git//bastion?ref=backend"
 }
 
 include {
@@ -31,5 +31,6 @@ dependencies {
 }
 
 inputs = {
+  machine_type = "g1-small"
 }
 
