@@ -15,7 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 terraform {
-  source = "git::git@github.com:ideasculptor/gcloud-templates.git//service-project/shared?ref=v0.0.5"
+  source = "git::git@github.com:ideasculptor/gcloud-templates.git//cloud-sql?ref=v0.0.5"
 }
 
 include {
@@ -24,12 +24,13 @@ include {
 
 dependencies {
   paths = [
-    "../../root-folder",
-    "../../dev/environment",
+    "../../../../root-folder",
+    "../../../environment",
+    "../../dev/backend_subnets",
   ]
 }
 
 inputs = {
-  project_short_name = "shared"
+  subnets_path = "backend_subnets"
 }
 

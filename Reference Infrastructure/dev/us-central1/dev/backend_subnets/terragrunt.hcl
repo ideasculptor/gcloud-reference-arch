@@ -34,19 +34,33 @@ inputs = {
 
   subnets          = [
     { 
-      subnet_name           = "admin"
-      subnet_ip             = "10.0.0.0/24"
+      subnet_name           = "gke"
+      subnet_ip             = "10.10.11.0/24"
       subnet_private_access = "true"
       subnet_flow_logs      = "true"
     },
     { 
-      subnet_name           = "public"
-      subnet_ip             = "10.10.10.0/24"
+      subnet_name           = "cloud-sql"
+      subnet_ip             = "10.10.12.0/24"
       subnet_private_access = "true"
       subnet_flow_logs      = "true"
     },
   ]
 
+  secondary_ranges = {
+    gke = [
+      {
+        range_name = "services"
+        ip_cidr_range = "192.168.1.0/24"
+      },
+      {
+        range_name = "pods"
+        ip_cidr_range = "192.168.2.0/24"
+      },
+    ]
+  }
+
+/*
   routes = [
     {
       name              = "egress-inet"
@@ -56,5 +70,6 @@ inputs = {
       next_hop_internet = "true"
     },
   ]
+*/
 }
 
