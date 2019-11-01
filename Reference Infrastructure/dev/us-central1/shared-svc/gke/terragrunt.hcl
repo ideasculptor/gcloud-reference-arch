@@ -32,5 +32,15 @@ dependencies {
 
 inputs = {
   subnets_path = "backend_subnets"
+  master_authorized_networks_config = [{
+    cidr_blocks = [{
+      cidr_block = "98.232.147.100/32"
+      display_name = "home"
+    }]
+  }]
+  regional = false
+  zones = ["us-central1-a"]
+  initial_node_count = 1
+  remove_default_node_pool = false
 }
 

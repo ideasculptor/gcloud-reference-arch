@@ -35,7 +35,7 @@ inputs = {
   subnets          = [
     { 
       subnet_name           = "admin"
-      subnet_ip             = "10.0.0.0/24"
+      subnet_ip             = "10.1.0.0/24"
       subnet_private_access = "true"
       subnet_flow_logs      = "true"
     },
