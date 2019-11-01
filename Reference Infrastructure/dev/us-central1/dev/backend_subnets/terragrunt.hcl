@@ -51,11 +51,11 @@ inputs = {
     gke = [
       {
         range_name = "services"
-        ip_cidr_range = "192.168.1.0/24"
+        ip_cidr_range = "192.168.0.0/22"
       },
       {
         range_name = "pods"
-        ip_cidr_range = "192.168.2.0/24"
+        ip_cidr_range = "192.168.16.0/20"
       },
     ]
   }
