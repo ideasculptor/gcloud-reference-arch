@@ -40,5 +40,7 @@ inputs = {
   }]
   regional = false
   zones = ["us-central1-a"]
+  initial_node_count = 1
+  remove_default_node_pool = false
 }
 
