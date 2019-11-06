@@ -15,7 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 terraform {
-  source = "git::git@github.com:ideasculptor/gcloud-templates.git//subnets?ref=v0.0.5"
+  source = "git::git@github.com:ideasculptor/gcloud-templates.git//subnets?ref=v0.0.6"
 }
 
 include {
@@ -30,7 +30,7 @@ dependencies {
 }
 
 inputs = {
-  delete_default_internet_gateway_routes = "true"
+  delete_default_internet_gateway_routes = "false"
 
   subnets          = [
     { 
