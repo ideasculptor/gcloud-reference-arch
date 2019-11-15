@@ -10,3 +10,6 @@
 *.tfvars
 
 .env
+
+# vim .swp files
+.*.swp

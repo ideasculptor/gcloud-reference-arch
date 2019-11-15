@@ -24,16 +24,20 @@ include {
 
 dependencies {
   paths = [
-    "../../../../root-folder",
     "../../../environment",
+    "../../../service-project",
     "../../dev/backend_subnets",
+    "../../dev/public_subnets",
+    "../bastion",
   ]
 }
 
 inputs = {
-  subnets_path = "backend_subnets"
+  backend_subnets_path = "backend_subnets"
+  public_subnets_path = "public_subnets"
 
   master_ipv4_cidr_block  = "172.16.0.0/28"
+  authorized_subnets = ["admin"]
 
   regional = false
   zones = ["us-central1-a"]
