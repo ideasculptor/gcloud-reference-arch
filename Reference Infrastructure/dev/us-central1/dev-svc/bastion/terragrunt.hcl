@@ -15,7 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 terraform {
-  source = "git::git@github.com:ideasculptor/gcloud-templates.git//bastion?ref=v0.0.6"
+  source = "git::git@github.com:ideasculptor/gcloud-templates.git//bastion?ref=v0.0.7"
 }
 
 include {
