@@ -15,7 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 terraform {
-  source = "git::git@github.com:ideasculptor/gcloud-templates.git//gke?ref=v0.0.7"
+  source = "git::git@github.com:ideasculptor/gcloud-templates.git//gke?ref=v0.0.8"
 }
 
 include {
@@ -24,16 +24,20 @@ include {
 
 dependencies {
   paths = [
-    "../../../../root-folder",
     "../../../environment",
+    "../../../service-project",
     "../../dev/backend_subnets",
+    "../../dev/public_subnets",
+    "../bastion",
   ]
 }
 
 inputs = {
-  subnets_path = "backend_subnets"
+  backend_subnets_path = "backend_subnets"
+  public_subnets_path = "public_subnets"
 
   master_ipv4_cidr_block  = "172.16.0.0/28"
+  authorized_subnets = ["admin"]
 
   regional = false
   zones = ["us-central1-a"]
@@ -61,6 +65,7 @@ inputs = {
     {
       name               = "default-node-pool"
       machine_type       = "n1-standard-2"
+      node_locations     = "us-central1-a"
       min_count          = 1
       max_count          = 100
       disk_size_gb       = 50

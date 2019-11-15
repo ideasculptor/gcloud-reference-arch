@@ -15,7 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 terraform {
-  source = "git::git@github.com:ideasculptor/gcloud-templates.git//bastion?ref=v0.0.8"
+  source = "git::git@github.com:ideasculptor/gcloud-templates.git//vpn?ref=v0.0.8"
 }
 
 include {
@@ -24,13 +24,10 @@ include {
 
 dependencies {
   paths = [
-    "../../../environment",
-    "../../dev/public_subnets",
-    "../../../../shared/service-project"
+    "../../../environment"
   ]
 }
 
 inputs = {
-  machine_type = "g1-small"
 }
 
