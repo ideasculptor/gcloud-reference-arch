@@ -15,7 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 terraform {
-  source = "git::git@github.com:ideasculptor/gcloud-templates.git//firewall?ref=v0.0.9"
+  source = "git::git@github.com:ideasculptor/gcloud-templates.git//nat?ref=v0.0.9"
 }
 
 include {
@@ -25,8 +25,6 @@ include {
 dependencies {
   paths = [
     "../../../environment",
-    "../public_subnets",
-    "../backend_subnets"
   ]
 }
 
