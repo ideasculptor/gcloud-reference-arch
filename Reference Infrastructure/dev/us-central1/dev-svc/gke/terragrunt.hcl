@@ -15,7 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 terraform {
-  source = "git::git@github.com:ideasculptor/gcloud-templates.git//gke?ref=v0.0.8"
+  source = "git::git@github.com:ideasculptor/gcloud-templates.git//gke?ref=v0.0.9"
 }
 
 include {
@@ -64,17 +64,17 @@ inputs = {
   node_pools = [
     {
       name               = "default-node-pool"
-      machine_type       = "n1-standard-2"
+      machine_type       = "custom-2-4096-ext"
       node_locations     = "us-central1-a"
-      min_count          = 1
+      min_count          = 2
       max_count          = 100
       disk_size_gb       = 50
       disk_type          = "pd-standard"
       image_type         = "COS"
       auto_repair        = true
       auto_upgrade       = false
-      preemptible        = false
-      initial_node_count = 1
+      preemptible        = true
+      initial_node_count = 2
     },
   ]
 
@@ -94,7 +94,7 @@ inputs = {
   }
 
   node_pools_tags = {
-    all = ["ssh", "https"]
+    all = []
     default-node-pool = []
   }
 

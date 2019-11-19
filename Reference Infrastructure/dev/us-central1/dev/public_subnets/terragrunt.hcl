@@ -15,7 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 terraform {
-  source = "git::git@github.com:ideasculptor/gcloud-templates.git//subnets?ref=v0.0.6"
+  source = "git::git@github.com:ideasculptor/gcloud-templates.git//subnets?ref=v0.0.9"
 }
 
 include {
@@ -46,17 +46,5 @@ inputs = {
       subnet_flow_logs      = "true"
     },
   ]
-
-/*
-  routes = [
-    {
-      name              = "egress-inet"
-      description       = "route through IGW to access internet"
-      destination_range = "0.0.0.0/0"
-      tags              = "egress-inet"
-      next_hop_internet = "true"
-    },
-  ]
-*/
 }
 
