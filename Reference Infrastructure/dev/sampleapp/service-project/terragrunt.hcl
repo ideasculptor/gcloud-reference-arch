@@ -15,7 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 terraform {
-  source = "git::git@github.com:ideasculptor/gcloud-templates.git//service-project/environment?ref=v0.0.11"
+  source = "git::git@github.com:ideasculptor/gcloud-templates.git//service-project/shared?ref=v0.0.11"
 }
 
 include {
@@ -24,12 +24,12 @@ include {
 
 dependencies {
   paths = [
-    "../../root-folder",
-    "../environment"
+    "../../../root-folder",
+    "../../environment"
   ]
 }
 
 inputs = {
-  project_short_name = "dev"
+  project_short_name = "sampleapp-dev"
 }
 

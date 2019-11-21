@@ -1,2 +1,3 @@
 project_template: "service-project"
 parent_path: "Reference Infrastructure"
+project_short_name: "sampleapp"
